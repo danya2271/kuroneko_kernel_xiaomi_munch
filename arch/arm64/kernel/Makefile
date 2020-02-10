@@ -70,6 +70,7 @@ arm64-obj-$(CONFIG_ARM64_SSBD)		+= ssbd.o
 arm64-obj-$(CONFIG_SHADOW_CALL_STACK)	+= scs.o
 
 obj-y					+= $(arm64-obj-y) vdso/ probes/
+obj-y 					+= mako_hotplug.o
 obj-m					+= $(arm64-obj-m)
 obj-$(CONFIG_COMPAT_VDSO)		+= vdso32/
 head-y					:= head.o
