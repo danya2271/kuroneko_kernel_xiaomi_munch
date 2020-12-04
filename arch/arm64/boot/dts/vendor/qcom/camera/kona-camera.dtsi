@@ -192,7 +192,7 @@
 			"cci_0_clk";
 		src-clock-name = "cci_0_clk_src";
 		clock-cntl-level = "lowsvs";
-		clock-rates = <37500000 0>;
+		clock-rates = <50000000 0>;
 		pinctrl-names = "cam_default", "cam_suspend";
 		pinctrl-0 = <&cci0_active &cci1_active>;
 		pinctrl-1 = <&cci0_suspend &cci1_suspend>;
@@ -218,7 +218,7 @@
 			hw-scl-stretch-en = <0>;
 			hw-trdhld = <6>;
 			hw-tsp = <3>;
-			cci-clk-src = <37500000>;
+			cci-clk-src = <50000000>;
 			status = "ok";
 		};
 
@@ -233,7 +233,7 @@
 			hw-scl-stretch-en = <0>;
 			hw-trdhld = <6>;
 			hw-tsp = <3>;
-			cci-clk-src = <37500000>;
+			cci-clk-src = <50000000>;
 			status = "ok";
 		};
 
@@ -248,7 +248,7 @@
 			hw-scl-stretch-en = <1>;
 			hw-trdhld = <6>;
 			hw-tsp = <3>;
-			cci-clk-src = <37500000>;
+			cci-clk-src = <50000000>;
 			status = "ok";
 		};
 
@@ -263,7 +263,7 @@
 			hw-scl-stretch-en = <1>;
 			hw-trdhld = <3>;
 			hw-tsp = <3>;
-			cci-clk-src = <37500000>;
+			cci-clk-src = <50000000>;
 			status = "ok";
 		};
 	};
@@ -285,7 +285,7 @@
 			"cci_1_clk";
 		src-clock-name = "cci_1_clk_src";
 		clock-cntl-level = "lowsvs";
-		clock-rates = <37500000 0>;
+		clock-rates = <50000000 0>;
 		pinctrl-names = "cam_default", "cam_suspend";
 		pinctrl-0 = <&cci2_active &cci3_active>;
 		pinctrl-1 = <&cci2_suspend &cci3_suspend>;
@@ -311,7 +311,7 @@
 			hw-scl-stretch-en = <0>;
 			hw-trdhld = <6>;
 			hw-tsp = <3>;
-			cci-clk-src = <37500000>;
+			cci-clk-src = <50000000>;
 			status = "ok";
 		};
 
@@ -326,7 +326,7 @@
 			hw-scl-stretch-en = <0>;
 			hw-trdhld = <6>;
 			hw-tsp = <3>;
-			cci-clk-src = <37500000>;
+			cci-clk-src = <50000000>;
 			status = "ok";
 		};
 
@@ -341,7 +341,7 @@
 			hw-scl-stretch-en = <1>;
 			hw-trdhld = <6>;
 			hw-tsp = <3>;
-			cci-clk-src = <37500000>;
+			cci-clk-src = <50000000>;
 			status = "ok";
 		};
 
@@ -356,7 +356,7 @@
 			hw-scl-stretch-en = <0>;
 			hw-trdhld = <3>;
 			hw-tsp = <3>;
-			cci-clk-src = <37500000>;
+			cci-clk-src = <50000000>;
 			status = "ok";
 		};
 	};

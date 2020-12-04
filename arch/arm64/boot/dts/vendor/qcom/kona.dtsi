@@ -1104,7 +1104,7 @@
 				<  533000 MHZ_TO_MBPS( 1555, 4) >,
 				<  730000 MHZ_TO_MBPS( 1804, 4) >,
 				<  920000 MHZ_TO_MBPS( 2092, 4) >,
-				< 1000000 MHZ_TO_MBPS( 3024, 4) >;
+				< 1080000 MHZ_TO_MBPS( 3024, 4) >;
 	};
 
 	cpu0_cpu_llcc_lat: qcom,cpu0-cpu-llcc-lat {
@@ -1322,7 +1322,7 @@
 				qcom,core-dev-table =
 					< 1804800 MHZ_TO_MBPS( 200, 4) >,
 					< 2380800 MHZ_TO_MBPS(1017, 4) >,
-					< 2500000 MHZ_TO_MBPS(2092, 4) >;
+					< 2600000 MHZ_TO_MBPS(2092, 4) >;
 			};
 
 			ddr5-map {
