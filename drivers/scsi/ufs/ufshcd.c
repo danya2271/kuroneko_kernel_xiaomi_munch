@@ -3913,6 +3913,48 @@ static void ufshcd_pm_qos_put(struct ufs_hba *hba)
 		queue_work(system_unbound_wq, &hba->pm_qos.put_work);
 }
 
+static void ufshcd_pm_qos_get_worker(struct work_struct *work)
+{
+	struct ufs_hba *hba = container_of(work, typeof(*hba), pm_qos.get_work);
+
+	if (!atomic_read(&hba->pm_qos.count))
+		return;
+
+	mutex_lock(&hba->pm_qos.lock);
+	if (atomic_read(&hba->pm_qos.count) && !hba->pm_qos.active) {
+		pm_qos_update_request(&hba->pm_qos.req, 100);
+		hba->pm_qos.active = true;
+	}
+	mutex_unlock(&hba->pm_qos.lock);
+}
+
+static void ufshcd_pm_qos_put_worker(struct work_struct *work)
+{
+	struct ufs_hba *hba = container_of(work, typeof(*hba), pm_qos.put_work);
+
+	if (atomic_read(&hba->pm_qos.count))
+		return;
+
+	mutex_lock(&hba->pm_qos.lock);
+	if (!atomic_read(&hba->pm_qos.count) && hba->pm_qos.active) {
+		pm_qos_update_request(&hba->pm_qos.req, PM_QOS_DEFAULT_VALUE);
+		hba->pm_qos.active = false;
+	}
+	mutex_unlock(&hba->pm_qos.lock);
+}
+
+static void ufshcd_pm_qos_get(struct ufs_hba *hba)
+{
+	if (atomic_inc_return(&hba->pm_qos.count) == 1)
+		queue_work(system_unbound_wq, &hba->pm_qos.get_work);
+}
+
+static void ufshcd_pm_qos_put(struct ufs_hba *hba)
+{
+	if (atomic_dec_return(&hba->pm_qos.count) == 0)
+		queue_work(system_unbound_wq, &hba->pm_qos.put_work);
+}
+
 /**
  * ufshcd_queuecommand - main entry point for SCSI requests
  * @host: SCSI host pointer
@@ -3935,6 +3977,7 @@ static int ufshcd_queuecommand(struct Scsi_Host *host, struct scsi_cmnd *cmd)
 	int pre_req_err = -EBUSY;
 	int lun = ufshcd_scsi_to_upiu_lun(cmd->device->lun);
 #endif
+	bool cmd_sent = false;
 
 	hba = shost_priv(host);
 
@@ -4152,7 +4195,8 @@ send_orig_cmd:
 			if (has_read_lock)
 				ufshcd_put_read_lock(hba);
 			cmd->scsi_done(cmd);
-			return 0;
+			err = 0;
+			goto out_pm_qos;
 		}
 		goto out;
 	}
@@ -6904,6 +6948,8 @@ static void __ufshcd_transfer_req_compl(struct ufs_hba *hba,
 			/* Mark completed command as NULL in LRB */
 			lrbp->cmd = NULL;
 			hba->ufs_stats.clk_rel.ctx = XFR_REQ_COMPL;
+			if (cmd->request)
+				ufshcd_pm_qos_put(hba);
 
 			clear_bit_unlock(index, &hba->lrb_in_use);
 			/*
