@@ -3085,6 +3085,11 @@ static int32_t __always_inline nvt_ts_suspend(struct device *dev)
 		buf[0] = EVENT_MAP_HOST_CMD;
 		buf[1] = 0x11;
 		CTP_SPI_WRITE(ts->client, buf, 2);
+
+		nvt_set_page(0x11a50);
+		buf[0] = 0x11a50 & 0xff;
+		buf[1] = 0x11;
+		CTP_SPI_WRITE(ts->client, buf, 2);
 		if (ts->ts_pinctrl) {
 			ret = pinctrl_select_state(ts->ts_pinctrl, ts->pinctrl_state_suspend);
 
