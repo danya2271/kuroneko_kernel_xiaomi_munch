@@ -149,7 +149,7 @@ int __init z_erofs_init_zip_subsystem(void)
 	int err = z_erofs_create_pcluster_pool();
 
 	if (err)
-		return err;
+	return err;
 	err = z_erofs_init_workqueue();
 	if (err)
 		z_erofs_destroy_pcluster_pool();
