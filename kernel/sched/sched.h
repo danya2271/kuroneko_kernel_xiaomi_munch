@@ -614,6 +614,9 @@ struct cfs_rq {
 	unsigned int		h_nr_running;      /* SCHED_{NORMAL,BATCH,IDLE} */
 	unsigned int		idle_h_nr_running; /* SCHED_IDLE */
 
+	s64			avg_vruntime;
+	u64			avg_load;
+
 	u64			exec_clock;
 	u64			min_vruntime;
 #if IS_ENABLED(CONFIG_PERF_HUMANTASK)
@@ -3311,9 +3314,13 @@ struct sched_avg_stats {
 };
 extern void sched_get_nr_running_avg(struct sched_avg_stats *stats);
 
+
 #if IS_ENABLED(CONFIG_PACKAGE_RUNTIME_INFO)
 void __weak init_task_runtime_info(struct task_struct *tsk)
 {
 	return;
 }
 #endif
+
+extern u64 avg_vruntime(struct cfs_rq *cfs_rq);
+
