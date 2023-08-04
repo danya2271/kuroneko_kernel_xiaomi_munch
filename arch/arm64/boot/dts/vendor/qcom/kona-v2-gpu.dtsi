@@ -10,22 +10,22 @@
 
 		opp-670000000 {
 			opp-hz = /bits/ 64 <670000000>;
-			opp-microvolt = <260>;
+			opp-microvolt = <240>;
 		};
 
 		opp-587000000 {
 			opp-hz = /bits/ 64 <587000000>;
-			opp-microvolt = <246>;
+			opp-microvolt = <216>;
 		};
 
 		opp-525000000 {
 			opp-hz = /bits/ 64 <525000000>;
-			opp-microvolt = <214>;
+			opp-microvolt = <184>;
 		};
 
 		opp-490000000 {
 			opp-hz = /bits/ 64 <490000000>;
-			opp-microvolt = <172>;
+			opp-microvolt = <162>;
 		};
 
 		opp-441600000 {
@@ -40,12 +40,12 @@
 
 		opp-305000000 {
 			opp-hz = /bits/ 64 <305000000>;
-			opp-microvolt = <32>;
+			opp-microvolt = <16>;
 		};
 
 		opp-150000000 {
 			opp-hz = /bits/ 64 <150000000>;
-			opp-microvolt = <16>;
+			opp-microvolt = <8>;
 		};
 	};
 };
@@ -332,11 +332,11 @@
 				reg = <0>;
 				qcom,gpu-freq = <525000000>;
 				qcom,bus-freq-ddr7 = <11>;
-				qcom,bus-min-ddr7 = <10>;
+				qcom,bus-min-ddr7 = <11>;
 				qcom,bus-max-ddr7 = <11>;
 
 				qcom,bus-freq-ddr8 = <11>;
-				qcom,bus-min-ddr8 = <10>;
+				qcom,bus-min-ddr8 = <11>;
 				qcom,bus-max-ddr8 = <11>;
 
 				qcom,acd-level = <0x802b5ffd>;
