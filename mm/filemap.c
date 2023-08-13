@@ -2637,7 +2637,11 @@ static struct file *do_async_mmap_readahead(struct vm_fault *vmf,
  * it in the page cache, and handles the special cases reasonably without
  * having a lot of duplicated code.
  *
+<<<<<<< HEAD
  * vma->vm_mm->mmap_sem must be held on entry.
+=======
+ * vma->vm_mm->mmap_sem must be held on entry (except FAULT_FLAG_SPECULATIVE).
+>>>>>>> parent of 53d30c2ae07f3 (BACKPORT: FROMLIST: mm: implement speculative handling in filemap_fault())
  *
  * If our return value has VM_FAULT_RETRY set, it's because
  * lock_page_or_retry() returned 0.
