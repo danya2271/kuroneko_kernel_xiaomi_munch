@@ -30,22 +30,22 @@
 
 		opp-441600000 {
 			opp-hz = /bits/ 64 <441600000>;
-			opp-microvolt = <97>;
+			opp-microvolt = <86>;
 		};
 
 		opp-400000000 {
 			opp-hz = /bits/ 64 <400000000>;
-			opp-microvolt = <76>;
+			opp-microvolt = <64>;
 		};
 
 		opp-305000000 {
 			opp-hz = /bits/ 64 <305000000>;
-			opp-microvolt = <4>;
+			opp-microvolt = <32>;
 		};
 
 		opp-150000000 {
 			opp-hz = /bits/ 64 <150000000>;
-			opp-microvolt = <2>;
+			opp-microvolt = <16>;
 		};
 	};
 };
@@ -70,7 +70,7 @@
 			#size-cells = <0>;
 			qcom,speed-bin = <0>;
 			qcom,initial-pwrlevel = <7>;
-			qcom,throttle-pwrlevel = <1>;
+			qcom,throttle-pwrlevel = <2>;
 
 			qcom,gpu-pwrlevel@0 {
 				reg = <0>;
@@ -198,7 +198,7 @@
 			#size-cells = <0>;
 			qcom,speed-bin = <1>;
 			qcom,initial-pwrlevel = <7>;
-			qcom,throttle-pwrlevel = <1>;
+			qcom,throttle-pwrlevel = <2>;
 
 			qcom,gpu-pwrlevel@0 {
 				reg = <0>;
@@ -426,7 +426,7 @@
 			#size-cells = <0>;
 			qcom,speed-bin = <2>;
 			qcom,initial-pwrlevel = <7>;
-			qcom,throttle-pwrlevel = <1>;
+			qcom,throttle-pwrlevel = <2>;
 
 			qcom,gpu-pwrlevel@0 {
 				reg = <0>;
