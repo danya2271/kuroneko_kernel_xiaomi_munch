@@ -1033,7 +1033,7 @@
 
 	cd-gpios = <&tlmm 77 GPIO_ACTIVE_HIGH>; /* Morpheus has to be HIGH */
 
-	status = "ok";
+	status = "disabled";
 };
 
 &vendor {
