@@ -1169,7 +1169,7 @@
 
 	cd-gpios = <&tlmm 77 GPIO_ACTIVE_LOW>;
 
-	status = "ok";
+	status = "disabled";
 };
 
 &usb1 {

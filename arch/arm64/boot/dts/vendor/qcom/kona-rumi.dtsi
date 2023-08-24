@@ -98,7 +98,7 @@
 
 /* RUMI UART console */
 &qupv3_se2_2uart {
-	status = "ok";
+	status = "disabled";
 };
 
 &audio_apr {
