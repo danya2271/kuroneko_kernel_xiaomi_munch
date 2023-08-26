@@ -1,4 +1,5 @@
 # auto-detect subdirs
+KBUILD_CFLAGS += -Wno-misleading-indentation -Wno-address-of-packed-member
 ifeq ($(CONFIG_ARCH_SDXPOORWILLS), y)
 include $(srctree)/techpack/audio/config/sdxpoorwillsauto.conf
 export $(shell sed 's/=.*//' $(srctree)/techpack/audio/config/sdxpoorwillsauto.conf)
