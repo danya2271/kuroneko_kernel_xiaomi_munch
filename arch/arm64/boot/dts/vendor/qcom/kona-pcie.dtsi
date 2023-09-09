@@ -100,7 +100,7 @@
 		qcom,l1-2-th-scale = <2>; /* 1us */
 		qcom,l1-2-th-value = <70>;
 		qcom,slv-addr-space-size = <0x4000000>;
-		qcom,ep-latency = <10>;
+		qcom,ep-latency = <67>;
 
 		qcom,config-recovery;
 
@@ -345,7 +345,7 @@
 		qcom,use-19p2mhz-aux-clk;
 		qcom,no-l0s-supported;
 		qcom,slv-addr-space-size = <0x20000000>;
-		qcom,ep-latency = <10>;
+		qcom,ep-latency = <67>;
 
 		qcom,pcie-phy-ver = <1102>;
 		qcom,phy-status-offset = <0xa14>;
@@ -625,7 +625,7 @@
 		qcom,use-19p2mhz-aux-clk;
 		qcom,no-l0s-supported;
 		qcom,slv-addr-space-size = <0x4000000>;
-		qcom,ep-latency = <10>;
+		qcom,ep-latency = <67>;
 
 		qcom,pcie-phy-ver = <1102>;
 		qcom,phy-status-offset = <0xa14>;
