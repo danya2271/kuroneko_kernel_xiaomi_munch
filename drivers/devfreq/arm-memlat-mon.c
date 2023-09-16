@@ -163,11 +163,6 @@ static inline void read_event(struct event_data *event)
 
 	if (!event->pevent)
 		return;
-
-	total = perf_event_read_value(event->pevent, &enabled, &running);
-	ev_count = total - event->prev_count;
-	event->prev_count = total;
-	event->last_delta = ev_count;
 }
 
 static void update_counts(struct memlat_cpu_grp *cpu_grp)
@@ -289,12 +284,6 @@ static int set_event(struct event_data *ev, int cpu, unsigned int event_id,
 		return 0;
 
 	attr->config = event_id;
-	pevent = perf_event_create_kernel_counter(attr, cpu, NULL, NULL, NULL);
-	if (IS_ERR(pevent))
-		return PTR_ERR(pevent);
-
-	ev->pevent = pevent;
-	perf_event_enable(pevent);
 
 	return 0;
 }
