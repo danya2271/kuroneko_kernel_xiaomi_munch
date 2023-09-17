@@ -162,7 +162,7 @@ endif
 
 KBUILD_DTBO_IMG := dtbo.img
 
-KBUILD_DTB_IMG := dtb.img
+KBUILD_DTB_IMG := dtb
 
 ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
 export DTC_FLAGS := -@
