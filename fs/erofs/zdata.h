@@ -91,7 +91,6 @@ struct z_erofs_decompressqueue {
 	union {
 		wait_queue_head_t wait;
 		struct work_struct work;
-		struct kthread_work kthread_work;
 	} u;
 };
 
