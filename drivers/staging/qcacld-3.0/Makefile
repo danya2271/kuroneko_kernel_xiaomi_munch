@@ -11,6 +11,8 @@ KERNEL_SRC ?= /lib/modules/$(shell uname -r)/build
 # module source directory.
 M ?= $(shell pwd)
 
+KBUILD_CFLAGS += -Oz
+
 # WLAN_ROOT must contain an absolute path (i.e. not a relative path)
 KBUILD_OPTIONS := WLAN_ROOT=$(shell cd $(KERNEL_SRC); readlink -e $(M))
 KBUILD_OPTIONS += MODNAME?=wlan
