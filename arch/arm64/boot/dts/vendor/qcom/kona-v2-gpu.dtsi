@@ -35,12 +35,12 @@
 
 		opp-400000000 {
 			opp-hz = /bits/ 64 <400000000>;
-			opp-microvolt = <64>;
+			opp-microvolt = <56>;
 		};
 
 		opp-305000000 {
 			opp-hz = /bits/ 64 <305000000>;
-			opp-microvolt = <16>;
+			opp-microvolt = <12>;
 		};
 
 		opp-150000000 {

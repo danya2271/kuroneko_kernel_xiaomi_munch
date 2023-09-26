@@ -14,7 +14,7 @@
 			regulator-name = "pm8150a_s3_level";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
 			regulator-min-microvolt =
-				<RPMH_REGULATOR_LEVEL_RETENTION>;
+				<RPMH_REGULATOR_LEVEL_OFF>;
 			regulator-max-microvolt =
 				<RPMH_REGULATOR_LEVEL_MAX>;
 			qcom,init-voltage-level =
@@ -26,7 +26,7 @@
 			regulator-name = "pm8150a_s3_level_ao";
 			qcom,set = <RPMH_REGULATOR_SET_ACTIVE>;
 			regulator-min-microvolt =
-				<RPMH_REGULATOR_LEVEL_RETENTION>;
+				<RPMH_REGULATOR_LEVEL_OFF>;
 			regulator-max-microvolt =
 				<RPMH_REGULATOR_LEVEL_MAX>;
 			qcom,init-voltage-level =
@@ -37,7 +37,7 @@
 			regulator-name = "pm8150a_s3_mmcx_sup_level";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
 			regulator-min-microvolt =
-				<RPMH_REGULATOR_LEVEL_RETENTION>;
+				<RPMH_REGULATOR_LEVEL_OFF>;
 			regulator-max-microvolt =
 				<RPMH_REGULATOR_LEVEL_MAX>;
 			qcom,init-voltage-level =
@@ -58,7 +58,7 @@
 			regulator-name = "pm8150_s3_level";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
 			regulator-min-microvolt =
-				<RPMH_REGULATOR_LEVEL_RETENTION>;
+				<RPMH_REGULATOR_LEVEL_OFF>;
 			regulator-max-microvolt =
 				<RPMH_REGULATOR_LEVEL_MAX>;
 			qcom,init-voltage-level =
@@ -71,7 +71,7 @@
 			regulator-name = "pm8150_s3_level_ao";
 			qcom,set = <RPMH_REGULATOR_SET_ACTIVE>;
 			regulator-min-microvolt =
-				<RPMH_REGULATOR_LEVEL_RETENTION>;
+				<RPMH_REGULATOR_LEVEL_OFF>;
 			regulator-max-microvolt =
 				<RPMH_REGULATOR_LEVEL_MAX>;
 			qcom,init-voltage-level =
@@ -175,7 +175,7 @@
 			regulator-name = "pm8150_l4_level";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
 			regulator-min-microvolt =
-				<RPMH_REGULATOR_LEVEL_RETENTION>;
+				<RPMH_REGULATOR_LEVEL_OFF>;
 			regulator-max-microvolt =
 				<RPMH_REGULATOR_LEVEL_MAX>;
 			qcom,init-voltage-level
@@ -306,7 +306,7 @@
 			regulator-name = "pm8150_l11_level";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
 			regulator-min-microvolt
-				= <RPMH_REGULATOR_LEVEL_RETENTION>;
+				= <RPMH_REGULATOR_LEVEL_OFF>;
 			regulator-max-microvolt
 				= <RPMH_REGULATOR_LEVEL_MAX>;
 			qcom,init-voltage-level
@@ -471,7 +471,7 @@
 			regulator-name = "pm8150a_s1_level";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
 			regulator-min-microvolt
-				= <RPMH_REGULATOR_LEVEL_RETENTION>;
+				= <RPMH_REGULATOR_LEVEL_OFF>;
 			regulator-max-microvolt
 				= <RPMH_REGULATOR_LEVEL_MAX>;
 			qcom,init-voltage-level
@@ -537,7 +537,7 @@
 			regulator-name = "pm8150a_s6_level";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
 			regulator-min-microvolt
-				= <RPMH_REGULATOR_LEVEL_RETENTION>;
+				= <RPMH_REGULATOR_LEVEL_OFF>;
 			regulator-max-microvolt
 				= <RPMH_REGULATOR_LEVEL_MAX>;
 			qcom,init-voltage-level

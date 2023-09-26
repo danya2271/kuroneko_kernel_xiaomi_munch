@@ -2,7 +2,7 @@
 #
 # Makefile for the kernel security code
 #
-
+KBUILD_CFLAGS += -Oz
 obj-$(CONFIG_KEYS)			+= keys/
 subdir-$(CONFIG_SECURITY_SELINUX)	+= selinux
 subdir-$(CONFIG_SECURITY_SMACK)		+= smack
