@@ -508,7 +508,7 @@ static int qcom_cpufreq_hw_read_lut(struct platform_device *pdev,
 		core_count = CORE_COUNT_VAL(data);
 
 		data = readl_relaxed(base_volt + i * lut_row_size);
-		volt = (data & GENMASK(11, 0)) * 1000 - 20000;
+		volt = ((data & GENMASK(11, 0)) * 1000) - 125000;
 		vc = data & GENMASK(21, 16);
 
 		if (src)
