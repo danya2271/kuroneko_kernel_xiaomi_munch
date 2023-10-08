@@ -806,7 +806,7 @@ int setup_arg_pages(struct linux_binprm *bprm,
 	if (ret)
 		ret = -EFAULT;
 	else
-		current->mm->stack_vm = vma;
+		current->mm->stack_vma = vma;
 
 out_unlock:
 	up_write(&mm->mmap_sem);
