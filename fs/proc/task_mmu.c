@@ -607,7 +607,7 @@ static void *m_start_pid(struct seq_file *m, loff_t *ppos)
 		struct vm_area_struct *tmp;
 
 		/* Optimistically check if the cached stack mapping is valid */
-		tmp = READ_ONCE(mm->stack_vma);
+		tmp = READ_ONCE(mm->stack_vm);
 		if (tmp && is_stack(tmp))
 			return tmp;
 
@@ -615,7 +615,7 @@ static void *m_start_pid(struct seq_file *m, loff_t *ppos)
 		tmp = vma;
 		do {
 			if (is_stack(tmp)) {
-				WRITE_ONCE(mm->stack_vma, vma);
+				WRITE_ONCE(mm->stack_vm, vma);
 				return tmp;
 			}
 			tmp = tmp->vm_next;
