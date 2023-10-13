@@ -93,6 +93,7 @@ config ARM_MEMLAT_MON
 	  
 config SIMPLE_GPU_ALGORITHM
 	bool "Simple GPU algorithm"
+	default y
 	depends on DEVFREQ_GOV_QCOM_ADRENO_TZ
 	help
 	  Simple user configurable GPU controlling algorithm
