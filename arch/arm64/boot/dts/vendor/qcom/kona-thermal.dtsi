@@ -50,7 +50,7 @@
 		isens_vref_0p8-supply = <&pm8150_l5_ao>;
 		isens-vref-0p8-settings = <800000 800000 20000>;
 		isens_vref_1p8-supply = <&pm8150_l12_ao>;
-		isens-vref-1p8-settings = <1700000 1700000 20000>;
+		isens-vref-1p8-settings = <1500000 1500000 20000>;
 	};
 };
 

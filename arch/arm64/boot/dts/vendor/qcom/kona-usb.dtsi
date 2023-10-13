@@ -136,7 +136,7 @@
 		vdd-supply = <&pm8150_l5>;
 		vdda18-supply = <&pm8150_l12>;
 		vdda33-supply = <&pm8150_l2>;
-		qcom,vdd-voltage-level = <0 800000 800000>;
+		qcom,vdd-voltage-level = <0 880000 880000>;
 
 		clocks = <&clock_rpmh RPMH_CXO_CLK>;
 		clock-names = "ref_clk_src";
@@ -444,7 +444,7 @@
 		vdd-supply = <&pm8150_l5>;
 		vdda18-supply = <&pm8150_l12>;
 		vdda33-supply = <&pm8150_l2>;
-		qcom,vdd-voltage-level = <0 800000 800000>;
+		qcom,vdd-voltage-level = <0 880000 880000>;
 
 		clocks = <&clock_rpmh RPMH_CXO_CLK>;
 		clock-names = "ref_clk_src";
