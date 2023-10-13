@@ -464,6 +464,9 @@ KBUILD_CFLAGS	+= --param inline-min-speedup=5
 KBUILD_CFLAGS	+= --param inline-unit-growth=60
 endif
 
+KBUILD_CFLAGS   += -march=armv8.2-a+lse+crypto+crc+dotprod+rcpc -mcpu=cortex-a55 -fno-trapping-math -fno-math-errno
+KBUILD_AFLAGS   += -march=armv8.2-a+lse+crypto+crc+dotprod+rcpc -mcpu=cortex-a55
+
 export ARCH SRCARCH CONFIG_SHELL HOSTCC KBUILD_HOSTCFLAGS CROSS_COMPILE LD CC
 export CPP AR NM STRIP OBJCOPY OBJDUMP OBJSIZE READELF KBUILD_HOSTLDFLAGS KBUILD_HOSTLDLIBS
 export MAKE LEX YACC AWK GENKSYMS INSTALLKERNEL PERL PYTHON PYTHON2 PYTHON3 UTS_MACHINE
