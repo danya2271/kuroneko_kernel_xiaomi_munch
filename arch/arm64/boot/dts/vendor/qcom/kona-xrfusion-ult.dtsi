@@ -1093,7 +1093,7 @@
 	pinctrl-1 = <&sdc2_clk_off &sdc2_cmd_off &sdc2_data_off &storage_cd>;
 
 
-	status = "disabled";
+	status = "ok";
 };
 
 &vendor {
