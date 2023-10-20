@@ -462,8 +462,8 @@
 	display_panel_vci: display_gpio_regulator_vci {
 		compatible = "regulator-fixed";
 		regulator-name = "display_panel_vci";
-		regulator-min-microvolt = <3000000>;
-		regulator-max-microvolt = <3000000>;
+		regulator-min-microvolt = <2704000>;
+		regulator-max-microvolt = <2704000>;
 		regulator-enable-ramp-delay = <233>;
 		gpio = <&tlmm 71 0>;
 		enable-active-high;
@@ -1519,8 +1519,8 @@
 };
 
 &dsi_k11a_38_08_0a_dsc_cmd {
-	//qcom,ulps-enabled;
-	//qcom,suspend-ulps-enabled;
+	qcom,ulps-enabled;
+	qcom,suspend-ulps-enabled;
 	qcom,dsi-select-clocks = "mux_byte_clk0", "mux_pixel_clk0",
 				"src_byte_clk0", "src_pixel_clk0",
 				"shadow_byte_clk0", "shadow_pixel_clk0";
@@ -1545,8 +1545,8 @@
 };
 
 &dsi_l11r_38_08_0a_dsc_cmd {
-	//qcom,ulps-enabled;
-	//qcom,suspend-ulps-enabled;
+	qcom,ulps-enabled;
+	qcom,suspend-ulps-enabled;
 	qcom,dsi-select-clocks = "mux_byte_clk0", "mux_pixel_clk0",
 				"src_byte_clk0", "src_pixel_clk0",
 				"shadow_byte_clk0", "shadow_pixel_clk0";
