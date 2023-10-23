@@ -243,6 +243,8 @@ static void do_idle(void)
 			tick_nohz_idle_stop_tick();
 			cpuhp_report_idle_dead();
 			arch_cpu_idle_dead();
+		} else {
+			cpuidle_set_idle_cpu(cpu);
 		}
 
 		arch_cpu_idle_enter();
@@ -261,6 +263,7 @@ static void do_idle(void)
 		} else {
 			cpuidle_idle_call();
 		}
+		cpuidle_clear_idle_cpu(cpu);
 		arch_cpu_idle_exit();
 	}
 
