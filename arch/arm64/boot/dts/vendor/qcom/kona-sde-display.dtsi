@@ -223,7 +223,7 @@
 		qcom,panel-supply-entry@1 {
 			reg = <1>;
 			qcom,supply-name = "vci";
-			qcom,supply-min-voltage = <3000000>;
+			qcom,supply-min-voltage = <2500000>;
 			qcom,supply-max-voltage = <3000000>;
 			qcom,supply-enable-load = <100000>;
 			qcom,supply-disable-load = <100>;
@@ -254,7 +254,7 @@
 		qcom,panel-supply-entry@1 {
 			reg = <1>;
 			qcom,supply-name = "vci";
-			qcom,supply-min-voltage = <3000000>;
+			qcom,supply-min-voltage = <2500000>;
 			qcom,supply-max-voltage = <3000000>;
 			qcom,supply-enable-load = <100000>;
 			qcom,supply-disable-load = <100>;
@@ -298,7 +298,7 @@
 		qcom,panel-supply-entry@2 {
 			reg = <2>;
 			qcom,supply-name = "vci";
-			qcom,supply-min-voltage = <3000000>;
+			qcom,supply-min-voltage = <2500000>;
 			qcom,supply-max-voltage = <3000000>;
 			qcom,supply-enable-load = <100000>;
 			qcom,supply-disable-load = <100>;
@@ -342,7 +342,7 @@
 		qcom,panel-supply-entry@2 {
 			reg = <2>;
 			qcom,supply-name = "vci";
-			qcom,supply-min-voltage = <3000000>;
+			qcom,supply-min-voltage = <2500000>;
 			qcom,supply-max-voltage = <3000000>;
 			qcom,supply-enable-load = <100000>;
 			qcom,supply-disable-load = <100>;
@@ -360,7 +360,7 @@
 		qcom,panel-supply-entry@0 {
 			reg = <0>;
 			qcom,supply-name = "vddio";
-			qcom,supply-min-voltage = <1880000>;
+			qcom,supply-min-voltage = <1800000>;
 			qcom,supply-max-voltage = <1880000>;
 			qcom,supply-enable-load = <62000>;
 			qcom,supply-disable-load = <80>;
@@ -373,7 +373,7 @@
 		qcom,panel-supply-entry@1 {
 			reg = <1>;
 			qcom,supply-name = "vci";
-			qcom,supply-min-voltage = <3000000>;
+			qcom,supply-min-voltage = <2500000>;
 			qcom,supply-max-voltage = <3000000>;
 			qcom,supply-enable-load = <100000>;
 			qcom,supply-disable-load = <100>;
@@ -391,7 +391,7 @@
 		qcom,panel-supply-entry@0 {
 			reg = <0>;
 			qcom,supply-name = "vddio";
-			qcom,supply-min-voltage = <1880000>;
+			qcom,supply-min-voltage = <1800000>;
 			qcom,supply-max-voltage = <1880000>;
 			qcom,supply-enable-load = <62000>;
 			qcom,supply-disable-load = <80>;
@@ -422,7 +422,7 @@
 		qcom,panel-supply-entry@0 {
 			reg = <0>;
 			qcom,supply-name = "vddio";
-			qcom,supply-min-voltage = <1880000>;
+			qcom,supply-min-voltage = <1800000>;
 			qcom,supply-max-voltage = <1880000>;
 			qcom,supply-enable-load = <62000>;
 			qcom,supply-disable-load = <80>;
@@ -435,7 +435,7 @@
 		qcom,panel-supply-entry@1 {
 			reg = <1>;
 			qcom,supply-name = "vci";
-			qcom,supply-min-voltage = <3000000>;
+			qcom,supply-min-voltage = <2500000>;
 			qcom,supply-max-voltage = <3000000>;
 			qcom,supply-enable-load = <100000>;
 			qcom,supply-disable-load = <100>;
@@ -462,7 +462,7 @@
 	display_panel_vci: display_gpio_regulator_vci {
 		compatible = "regulator-fixed";
 		regulator-name = "display_panel_vci";
-		regulator-min-microvolt = <2704000>;
+		regulator-min-microvolt = <2504000>;
 		regulator-max-microvolt = <2704000>;
 		regulator-enable-ramp-delay = <233>;
 		gpio = <&tlmm 71 0>;
