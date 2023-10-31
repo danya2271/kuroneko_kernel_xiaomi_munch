@@ -41,8 +41,7 @@ enum HTC_SEND_QUEUE_RESULT {
 
 #if DEBUG_CREDIT
 /* bit mask to enable debug certain endpoint */
-static unsigned int ep_debug_mask =
-	(1 << ENDPOINT_0) | (1 << ENDPOINT_1) | (1 << ENDPOINT_2);
+static unsigned int ep_debug_mask = 0;
 #endif
 
 #ifdef QCA_WIFI_NAPIER_EMULATION

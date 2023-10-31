@@ -232,7 +232,7 @@ struct smb5 {
 
 static struct smb_charger *__smbchg;
 
-static int __debug_mask = PR_MISC | PR_WLS | PR_OEM | PR_PARALLEL;
+static int __debug_mask = 0;
 
 static ssize_t pd_disabled_show(struct device *dev, struct device_attribute
 				*attr, char *buf)
@@ -5078,7 +5078,7 @@ static int smb5_probe(struct platform_device *pdev)
 
 	chg = &chip->chg;
 	chg->dev = &pdev->dev;
-	chg->debug_mask = &__debug_mask;
+	chg->debug_mask = 0;
 	chg->thermal_fcc_override = 0;
 	chg->pd_disabled = 0;
 	chg->enable_bypass = 1;
