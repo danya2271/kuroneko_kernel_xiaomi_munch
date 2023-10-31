@@ -34,6 +34,8 @@
 		qcom,mdss-dsi-te-using-te-pin;
 		qcom,mdss-dsi-tx-eot-append;
 		qcom,mdss-dsi-lp11-init;
+		qcom,partial-update-enabled = "single_roi";
+		qcom,panel-roi-alignment = <1080 0 1080 16 1080 16>;
 
 		qcom,mdss-dsi-panel-hdr-enabled;
 		qcom,mdss-dsi-panel-hdr-color-primaries = <14500 15500 32000
