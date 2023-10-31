@@ -25,7 +25,7 @@
 #include <soc/qcom/bam_dmux.h>
 
 /* Debug message support */
-static int msm_rmnet_bam_debug_mask;
+static int msm_rmnet_bam_debug_mask = 0;
 static ssize_t debug_enable_show(struct device *dev, struct device_attribute
 					*attr, char *buf)
 {
