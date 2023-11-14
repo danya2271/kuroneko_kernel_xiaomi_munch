@@ -4076,9 +4076,13 @@ static inline void adjust_cpus_for_packing(struct task_struct *p,
 
 	if (*best_idle_cpu == -1 || *target_cpu == -1)
 		return;
-
+#ifdef CONFIG_SCHED_WALT
 	if (prefer_spread_on_idle(*best_idle_cpu, false))
 		fbt_env->need_idle |= 2;
+#else
+	if (prefer_spread_on_idle(*best_idle_cpu))
+		fbt_env->need_idle |= 2;
+#endif
 
 	if (task_rtg_high_prio(p) && walt_nr_rtg_high_prio(*target_cpu) > 0) {
 		*target_cpu = -1;
@@ -10958,8 +10962,12 @@ static int load_balance(int this_cpu, struct rq *this_rq,
 	};
 
 	env.prefer_spread = (idle != CPU_NOT_IDLE &&
+#ifdef CONFIG_SCHED_WALT
 				prefer_spread_on_idle(this_cpu,
 				idle == CPU_NEWLY_IDLE) &&
+#else
+				prefer_spread_on_idle(this_cpu) &&
+#endif
 				!((sd->flags & SD_ASYM_CPUCAPACITY) &&
 				 !is_asym_cap_cpu(this_cpu)));
 
@@ -11484,9 +11492,12 @@ static void rebalance_domains(struct rq *rq, enum cpu_idle_type idle)
 			need_decay = 1;
 		}
 		max_cost += sd->max_newidle_lb_cost;
-
+#ifdef CONFIG_SCHED_WALT
 		if (!sd_overutilized(sd) && !prefer_spread_on_idle(cpu,
 					idle == CPU_NEWLY_IDLE))
+#else
+		if (!sd_overutilized(sd) && !prefer_spread_on_idle(cpu))
+#endif
 			continue;
 
 		if (!(sd->flags & SD_LOAD_BALANCE))
@@ -11745,7 +11756,11 @@ static void nohz_balancer_kick(struct rq *rq)
 	 */
 	if (static_branch_likely(&sched_energy_present)) {
 		if (rq->nr_running >= 2 && (cpu_overutilized(cpu) ||
+#ifdef CONFIG_SCHED_WALT
 			prefer_spread_on_idle(cpu, false)))
+#else
+			prefer_spread_on_idle(cpu)))
+#endif
 			flags = NOHZ_KICK_MASK;
 		goto out;
 	}
@@ -12116,7 +12131,11 @@ int newidle_balance(struct rq *this_rq, struct rq_flags *rf)
 	int pulled_task = 0;
 	u64 curr_cost = 0;
 	u64 avg_idle = this_rq->avg_idle;
+#ifdef CONFIG_SCHED_WALT
 	bool prefer_spread = prefer_spread_on_idle(this_cpu, true);
+#else
+	bool prefer_spread = prefer_spread_on_idle(this_cpu);
+#endif
 	bool force_lb = (!is_min_capacity_cpu(this_cpu) &&
 				silver_has_big_tasks() &&
 				sysctl_sched_force_lb_enable &&
