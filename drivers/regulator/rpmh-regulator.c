@@ -21,6 +21,9 @@
 
 #include <dt-bindings/regulator/qcom,rpmh-regulator-levels.h>
 
+// Voltage offset for undervolting VRM regulators
+#define VOLTAGE_OFFSET 350  /* mV */
+
 /**
  * enum rpmh_regulator_type - supported RPMh accelerator types
  * %RPMH_REGULATOR_TYPE_VRM:	RPMh VRM accelerator which supports voting on
@@ -983,11 +986,14 @@ static int rpmh_regulator_vrm_set_voltage(struct regulator_dev *rdev,
 	int mv;
 	int rc = 0;
 
-	mv = DIV_ROUND_UP(min_uv, 1000);
+	mv = DIV_ROUND_UP(min_uv, 1000) - VOLTAGE_OFFSET;
 	if (mv * 1000 > max_uv) {
 		vreg_err(vreg, "no set points available in range %d-%d uV\n",
 			min_uv, max_uv);
 		return -EINVAL;
+	}
+	if (mv * 1000 < min_uv) {
+		mv==min_uv / 1000;
 	}
 
 	mutex_lock(&vreg->aggr_vreg->lock);
