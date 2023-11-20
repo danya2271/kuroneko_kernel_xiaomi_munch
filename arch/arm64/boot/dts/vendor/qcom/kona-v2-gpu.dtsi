@@ -13,38 +13,38 @@
 			opp-microvolt = <240>;
 		};
 
-		opp-587000000 {
-			opp-hz = /bits/ 64 <587000000>;
-			opp-microvolt = <186>;
+		opp-606852000 {
+			opp-hz = /bits/ 64 <606852000>;
+			opp-microvolt = <138>;
 		};
 
-		opp-525000000 {
-			opp-hz = /bits/ 64 <525000000>;
-			opp-microvolt = <77>;
+		opp-530710000 {
+			opp-hz = /bits/ 64 <530710000>;
+			opp-microvolt = <97>;
 		};
 
-		opp-490000000 {
-			opp-hz = /bits/ 64 <490000000>;
-			opp-microvolt = <74>;
+		opp-454568000 {
+			opp-hz = /bits/ 64 <454568000>;
+			opp-microvolt = <56>;
 		};
 
-		opp-441600000 {
-			opp-hz = /bits/ 64 <441600000>;
-			opp-microvolt = <49>;
-		};
-
-		opp-400000000 {
-			opp-hz = /bits/ 64 <400000000>;
-			opp-microvolt = <35>;
-		};
-
-		opp-305000000 {
-			opp-hz = /bits/ 64 <305000000>;
+		opp-378426000 {
+			opp-hz = /bits/ 64 <378426000>;
 			opp-microvolt = <1>;
 		};
 
-		opp-150000000 {
-			opp-hz = /bits/ 64 <150000000>;
+		opp-302284000 {
+			opp-hz = /bits/ 64 <302284000>;
+			opp-microvolt = <1>;
+		};
+
+		opp-226142000 {
+			opp-hz = /bits/ 64 <226142000>;
+			opp-microvolt = <1>;
+		};
+
+		opp-185000000 {
+			opp-hz = /bits/ 64 <185000000>;
 			opp-microvolt = <1>;
 		};
 	};
@@ -88,7 +88,7 @@
 
 			qcom,gpu-pwrlevel@1 {
 				reg = <1>;
-				qcom,gpu-freq = <587000000>;
+				qcom,gpu-freq = <606852000>;
 				qcom,bus-freq-ddr7 = <11>;
 				qcom,bus-min-ddr7 = <1>;
 				qcom,bus-max-ddr7 = <11>;
@@ -102,7 +102,7 @@
 
 			qcom,gpu-pwrlevel@2 {
 				reg = <2>;
-				qcom,gpu-freq = <525000000>;
+				qcom,gpu-freq = <530710000>;
 				qcom,bus-freq-ddr7 = <11>;
 				qcom,bus-min-ddr7 = <1>;
 				qcom,bus-max-ddr7 = <11>;
@@ -116,7 +116,7 @@
 
 			qcom,gpu-pwrlevel@3 {
 				reg = <3>;
-				qcom,gpu-freq = <490000000>;
+				qcom,gpu-freq = <454568000>;
 				qcom,bus-freq-ddr7 = <11>;
 				qcom,bus-min-ddr7 = <1>;
 				qcom,bus-max-ddr7 = <11>;
@@ -130,8 +130,8 @@
 
 			qcom,gpu-pwrlevel@4 {
 				reg = <4>;
-				qcom,gpu-freq = <441600000>;
-				qcom,bus-freq-ddr7 = <11>;
+				qcom,gpu-freq = <378426000>;
+				qcom,bus-freq-ddr7 = <9>;
 				qcom,bus-min-ddr7 = <1>;
 				qcom,bus-max-ddr7 = <11>;
 
@@ -144,8 +144,8 @@
 
 			qcom,gpu-pwrlevel@5 {
 				reg = <5>;
-				qcom,gpu-freq = <400000000>;
-				qcom,bus-freq-ddr7 = <11>;
+				qcom,gpu-freq = <302284000>;
+				qcom,bus-freq-ddr7 = <8>;
 				qcom,bus-min-ddr7 = <1>;
 				qcom,bus-max-ddr7 = <11>;
 
@@ -158,8 +158,8 @@
 
 			qcom,gpu-pwrlevel@6 {
 				reg = <6>;
-				qcom,gpu-freq = <305000000>;
-				qcom,bus-freq-ddr7 = <7>;
+				qcom,gpu-freq = <226142000>;
+				qcom,bus-freq-ddr7 = <3>;
 				qcom,bus-min-ddr7 = <1>;
 				qcom,bus-max-ddr7 = <9>;
 
@@ -172,7 +172,7 @@
 
 			qcom,gpu-pwrlevel@7 {
 				reg = <7>;
-				qcom,gpu-freq = <150000000>;
+				qcom,gpu-freq = <185000000>;
 				qcom,bus-freq-ddr7 = <1>;
 				qcom,bus-min-ddr7 = <1>;
 				qcom,bus-max-ddr7 = <9>;
@@ -216,7 +216,7 @@
 
 			qcom,gpu-pwrlevel@1 {
 				reg = <1>;
-				qcom,gpu-freq = <587000000>;
+				qcom,gpu-freq = <606852000>;
 				qcom,bus-freq-ddr7 = <11>;
 				qcom,bus-min-ddr7 = <1>;
 				qcom,bus-max-ddr7 = <11>;
@@ -230,7 +230,7 @@
 
 			qcom,gpu-pwrlevel@2 {
 				reg = <2>;
-				qcom,gpu-freq = <525000000>;
+				qcom,gpu-freq = <530710000>;
 				qcom,bus-freq-ddr7 = <11>;
 				qcom,bus-min-ddr7 = <1>;
 				qcom,bus-max-ddr7 = <11>;
@@ -244,7 +244,7 @@
 
 			qcom,gpu-pwrlevel@3 {
 				reg = <3>;
-				qcom,gpu-freq = <490000000>;
+				qcom,gpu-freq = <454568000>;
 				qcom,bus-freq-ddr7 = <11>;
 				qcom,bus-min-ddr7 = <1>;
 				qcom,bus-max-ddr7 = <11>;
@@ -258,8 +258,8 @@
 
 			qcom,gpu-pwrlevel@4 {
 				reg = <4>;
-				qcom,gpu-freq = <441600000>;
-				qcom,bus-freq-ddr7 = <11>;
+				qcom,gpu-freq = <378426000>;
+				qcom,bus-freq-ddr7 = <9>;
 				qcom,bus-min-ddr7 = <1>;
 				qcom,bus-max-ddr7 = <11>;
 
@@ -272,8 +272,8 @@
 
 			qcom,gpu-pwrlevel@5 {
 				reg = <5>;
-				qcom,gpu-freq = <400000000>;
-				qcom,bus-freq-ddr7 = <11>;
+				qcom,gpu-freq = <302284000>;
+				qcom,bus-freq-ddr7 = <8>;
 				qcom,bus-min-ddr7 = <1>;
 				qcom,bus-max-ddr7 = <11>;
 
@@ -286,8 +286,8 @@
 
 			qcom,gpu-pwrlevel@6 {
 				reg = <6>;
-				qcom,gpu-freq = <305000000>;
-				qcom,bus-freq-ddr7 = <7>;
+				qcom,gpu-freq = <226142000>;
+				qcom,bus-freq-ddr7 = <3>;
 				qcom,bus-min-ddr7 = <1>;
 				qcom,bus-max-ddr7 = <9>;
 
@@ -300,7 +300,7 @@
 
 			qcom,gpu-pwrlevel@7 {
 				reg = <7>;
-				qcom,gpu-freq = <150000000>;
+				qcom,gpu-freq = <185000000>;
 				qcom,bus-freq-ddr7 = <1>;
 				qcom,bus-min-ddr7 = <1>;
 				qcom,bus-max-ddr7 = <9>;
@@ -344,7 +344,7 @@
 
 			qcom,gpu-pwrlevel@1 {
 				reg = <1>;
-				qcom,gpu-freq = <587000000>;
+				qcom,gpu-freq = <606852000>;
 				qcom,bus-freq-ddr7 = <11>;
 				qcom,bus-min-ddr7 = <1>;
 				qcom,bus-max-ddr7 = <11>;
@@ -358,7 +358,7 @@
 
 			qcom,gpu-pwrlevel@2 {
 				reg = <2>;
-				qcom,gpu-freq = <525000000>;
+				qcom,gpu-freq = <530710000>;
 				qcom,bus-freq-ddr7 = <11>;
 				qcom,bus-min-ddr7 = <1>;
 				qcom,bus-max-ddr7 = <11>;
@@ -372,7 +372,7 @@
 
 			qcom,gpu-pwrlevel@3 {
 				reg = <3>;
-				qcom,gpu-freq = <490000000>;
+				qcom,gpu-freq = <454568000>;
 				qcom,bus-freq-ddr7 = <11>;
 				qcom,bus-min-ddr7 = <1>;
 				qcom,bus-max-ddr7 = <11>;
@@ -386,8 +386,8 @@
 
 			qcom,gpu-pwrlevel@4 {
 				reg = <4>;
-				qcom,gpu-freq = <441600000>;
-				qcom,bus-freq-ddr7 = <11>;
+				qcom,gpu-freq = <378426000>;
+				qcom,bus-freq-ddr7 = <9>;
 				qcom,bus-min-ddr7 = <1>;
 				qcom,bus-max-ddr7 = <11>;
 
@@ -400,8 +400,8 @@
 
 			qcom,gpu-pwrlevel@5 {
 				reg = <5>;
-				qcom,gpu-freq = <400000000>;
-				qcom,bus-freq-ddr7 = <11>;
+				qcom,gpu-freq = <302284000>;
+				qcom,bus-freq-ddr7 = <8>;
 				qcom,bus-min-ddr7 = <1>;
 				qcom,bus-max-ddr7 = <11>;
 
@@ -414,8 +414,8 @@
 
 			qcom,gpu-pwrlevel@6 {
 				reg = <6>;
-				qcom,gpu-freq = <305000000>;
-				qcom,bus-freq-ddr7 = <7>;
+				qcom,gpu-freq = <226142000>;
+				qcom,bus-freq-ddr7 = <3>;
 				qcom,bus-min-ddr7 = <1>;
 				qcom,bus-max-ddr7 = <9>;
 
@@ -428,7 +428,7 @@
 
 			qcom,gpu-pwrlevel@7 {
 				reg = <7>;
-				qcom,gpu-freq = <150000000>;
+				qcom,gpu-freq = <185000000>;
 				qcom,bus-freq-ddr7 = <1>;
 				qcom,bus-min-ddr7 = <1>;
 				qcom,bus-max-ddr7 = <9>;
