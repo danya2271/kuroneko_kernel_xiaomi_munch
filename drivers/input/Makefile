@@ -2,7 +2,9 @@
 #
 # Makefile for the input core drivers.
 #
-
+KBUILD_CFLAGS	+= -mllvm -inline-threshold=1600
+KBUILD_CFLAGS	+= -mllvm -inlinehint-threshold=1750
+KBUILD_CFLAGS   += -mllvm -unroll-threshold=20
 # Each configuration option enables a list of files.
 KBUILD_CFLAGS += -O3
 obj-$(CONFIG_INPUT)		+= input-core.o
