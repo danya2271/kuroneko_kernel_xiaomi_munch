@@ -2,7 +2,9 @@
 #
 # Makefile for the linux ext4-filesystem routines.
 #
-
+KBUILD_CFLAGS	+= -mllvm -inline-threshold=1600
+KBUILD_CFLAGS	+= -mllvm -inlinehint-threshold=1750
+KBUILD_CFLAGS   += -mllvm -unroll-threshold=20
 obj-$(CONFIG_EXT4_FS) += ext4.o
 
 ext4-y	:= balloc.o bitmap.o block_validity.o dir.o ext4_jbd2.o extents.o \
