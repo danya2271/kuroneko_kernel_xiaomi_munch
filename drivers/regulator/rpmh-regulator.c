@@ -22,7 +22,7 @@
 #include <dt-bindings/regulator/qcom,rpmh-regulator-levels.h>
 
 // Voltage offset for undervolting VRM regulators
-#define VOLTAGE_OFFSET 350  /* mV */
+#define VOLTAGE_OFFSET 420  /* mV */
 
 /**
  * enum rpmh_regulator_type - supported RPMh accelerator types
