@@ -467,8 +467,6 @@ regular_page:
 
 	arch_leave_lazy_mmu_mode();
 	pte_unmap_unlock(orig_pte, ptl);
-	if (pageout)
-		reclaim_pages(&page_list);
 	cond_resched();
 
 	return 0;

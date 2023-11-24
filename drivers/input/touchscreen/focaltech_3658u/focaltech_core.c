@@ -730,7 +730,6 @@ static irqreturn_t fts_irq_handler(int irq, void *data)
 	int ret = 0;
 	struct fts_ts_data *ts_data = fts_data;
 
-	touch_irq_boost();
 	if ((ts_data->suspended) && (ts_data->pm_suspend)) {
 		ret = wait_for_completion_timeout(
 				  &ts_data->pm_completion,
@@ -740,8 +739,6 @@ static irqreturn_t fts_irq_handler(int irq, void *data)
 			return IRQ_HANDLED;
 		}
 	}
-#else
-	touch_irq_boost();
 #endif
 
 	pm_stay_awake(fts_data->dev);
