@@ -2,7 +2,7 @@
 #
 # Makefile for the input core drivers.
 #
-KBUILD_CFLAGS	+= -mllvm -inline-threshold=1600
+KBUILD_CFLAGS	+= -mllvm -inline-threshold=1600 -fno-strict-aliasing -funit-at-a-time
 KBUILD_CFLAGS	+= -mllvm -inlinehint-threshold=1750
 KBUILD_CFLAGS   += -mllvm -unroll-threshold=20
 # Each configuration option enables a list of files.
