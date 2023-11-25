@@ -826,6 +826,38 @@ KBUILD_CFLAGS += $(call cc-option, -mllvm -disable-struct-const-merge)
 # Enable hot cold split optimization
 KBUILD_CFLAGS   += -mllvm -hot-cold-split=true
 
+# Additional optimizations for better kernel speed
+KBUILD_CFLAGS +=  -mllvm -enable-load-pre
+KBUILD_CFLAGS +=  -mllvm -enable-loop-distribute
+KBUILD_CFLAGS +=  -mllvm -enable-post-misched
+KBUILD_CFLAGS +=  -mllvm -enable-pre
+KBUILD_CFLAGS +=  -mllvm -enable-tail-merge
+KBUILD_CFLAGS +=  -falign-functions
+KBUILD_CFLAGS +=  -fomit-frame-pointer
+KBUILD_CFLAGS +=  -funroll-loops
+KBUILD_CFLAGS +=  -fno-strict-aliasing
+KBUILD_CFLAGS +=  -ffunction-sections
+KBUILD_CFLAGS +=  -fdata-sections
+KBUILD_CFLAGS +=  -fvisibility=hidden
+KBUILD_CFLAGS +=  -fmerge-all-constants
+KBUILD_LDFLAGS += -z separate-code
+KBUILD_LDFLAGS += -z lazy
+KBUILD_LDFLAGS += -z nocopyreloc
+KBUILD_LDFLAGS += -z now
+KBUILD_LDFLAGS += -z combreloc
+KBUILD_LDFLAGS += -O3
+KBUILD_LDFLAGS += --disable-new-dtags
+KBUILD_LDFLAGS += --no-keep-memory
+KBUILD_LDFLAGS += --hash-style=sysv
+KBUILD_LDFLAGS += --sort-common
+KBUILD_LDFLAGS += -z max-page-size=4096
+KBUILD_AFLAGS += -ffunction-sections
+KBUILD_AFLAGS += -fdata-sections
+KBUILD_AFLAGS += -fno-exceptions
+KBUILD_AFLAGS += -fno-rtti
+KBUILD_AFLAGS += -fmerge-all-constants
+KBUILD_AFLAGS += -mrelax-all
+
 # Quiet clang warning: comparison of unsigned expression < 0 is always false
 KBUILD_CFLAGS += $(call cc-disable-warning, tautological-compare)
 # CLANG uses a _MergedGlobals as optimization, but this breaks modpost, as the
