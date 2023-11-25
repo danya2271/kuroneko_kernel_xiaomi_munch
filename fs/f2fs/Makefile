@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0
-KBUILD_CFLAGS	+= -mllvm -inline-threshold=1600
+KBUILD_CFLAGS	+= -mllvm -inline-threshold=1600 -fno-strict-aliasing -funit-at-a-time
 KBUILD_CFLAGS	+= -mllvm -inlinehint-threshold=1750
 KBUILD_CFLAGS   += -mllvm -unroll-threshold=20
 obj-$(CONFIG_F2FS_FS) += f2fs.o
