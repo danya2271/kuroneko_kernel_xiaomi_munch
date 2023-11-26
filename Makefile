@@ -718,9 +718,6 @@ KBUILD_CFLAGS	+= $(call cc-disable-warning, format-truncation)
 KBUILD_CFLAGS	+= $(call cc-disable-warning, format-overflow)
 KBUILD_CFLAGS	+= $(call cc-disable-warning, int-in-bool-context)
 KBUILD_CFLAGS	+= $(call cc-disable-warning, address-of-packed-member)
-ifdef CONFIG_LTO_CLANG
-KBUILD_LDFLAGS  += --plugin-opt=-import-instr-limit=20
-endif
 ifeq ($(CONFIG_CC_OPTIMIZE_FOR_SIZE), y)
 KBUILD_CFLAGS   += -Os
 KBUILD_AFLAGS   += -Os
@@ -832,8 +829,8 @@ KBUILD_CFLAGS +=  -mllvm -enable-loop-distribute
 KBUILD_CFLAGS +=  -mllvm -enable-post-misched
 KBUILD_CFLAGS +=  -mllvm -enable-pre
 KBUILD_CFLAGS +=  -mllvm -enable-tail-merge
-KBUILD_CFLAGS +=  -falign-functions
-KBUILD_CFLAGS +=  -fomit-frame-pointer
+KBUILD_CFLAGS +=  -falign-functions -fno-unwind-tables -fno-asynchronous-unwind-tables
+KBUILD_CFLAGS +=  -fomit-frame-pointer -momit-leaf-frame-pointer
 KBUILD_CFLAGS +=  -funroll-loops
 KBUILD_CFLAGS +=  -fno-strict-aliasing
 KBUILD_CFLAGS +=  -ffunction-sections
