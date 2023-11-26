@@ -1519,7 +1519,7 @@ void ufs_enter_h8_disable(struct Scsi_Host *shost)
 	hba->caps &= ~UFSHCD_CAP_CLK_SCALING;
 	hba->caps &= ~UFSHCD_CAP_POWER_COLLAPSE_DURING_HIBERN8;
 
-	hba->ahit = FIELD_PREP(UFSHCI_AHIBERN8_TIMER_MASK, 0);
+	hba->ahit = FIELD_PREP(UFSHCI_AHIBERN8_TIMER_MASK, 1);
 	__raw_writel(__cpu_to_le32(hba->ahit), hba->mmio_base + REG_AUTO_HIBERNATE_IDLE_TIMER);
 	hba->quirks |= UFSHCD_QUIRK_BROKEN_AUTO_HIBERN8;
 	hba->hibern8_on_idle.state = HIBERN8_EXITED;
