@@ -14,7 +14,7 @@
 #include <linux/delay.h>
 
 #define PROC_AWAKE_ID 12 /* 12th bit */
-#define SMP2P_SLEEPSTATE_TIME CONFIG_SMP2P_SLEEPSTATE_TIME
+#define SMP2P_SLEEPSTATE_TIME 1
 #define AWAKE_BIT BIT(PROC_AWAKE_ID)
 static struct wakeup_source *notify_ws;
 
