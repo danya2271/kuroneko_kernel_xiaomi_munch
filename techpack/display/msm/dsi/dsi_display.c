@@ -244,9 +244,7 @@ int dsi_display_set_backlight(struct drm_connector *connector,
 	}
 
 #ifdef CONFIG_DRM_SDE_EXPO
-	if (bl_lvl && !panel->spec_pdata->aod_mode) {
-		bl_temp = expo_map_dim_level((u32)bl_temp, dsi_display);
-	}
+	bl_temp = expo_map_dim_level((u32)bl_temp, dsi_display);
 #endif
 
 	rc = dsi_panel_set_backlight(panel, (u32)bl_temp);
