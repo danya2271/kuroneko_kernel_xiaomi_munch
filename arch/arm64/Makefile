@@ -58,7 +58,7 @@ KBUILD_CFLAGS	+= $(lseinstr) $(brokengasinst) $(compat_vdso)
 
 ifeq ($(CONFIG_ARCH_KONA), y)
 ifeq ($(cc-name),clang)
-KBUILD_CFLAGS   += -march=armv8.2-a+lse+crypto+crc+dotprod+rcpc -mcpu=cortex-a55 -fno-trapping-math -fno-math-errno
+KBUILD_CFLAGS   += -march=armv8.2-a+lse+crypto+crc+dotprod+rcpc -mcpu=cortex-a55
 KBUILD_AFLAGS   += -march=armv8.2-a+lse+crypto+crc+dotprod+rcpc -mcpu=cortex-a55
 ifeq ($(CONFIG_LD_IS_LLD), y)
 KBUILD_LDFLAGS  += -mllvm -march=armv8.2-a+crypto+crc -mcpu=cortex-a55
