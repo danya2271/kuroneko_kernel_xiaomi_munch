@@ -230,7 +230,7 @@ And public attribution of xiaomi platforms(like L11R and so and)
 
 &pm8150a_l11 {
 	qcom,init-voltage = <3000000>;
-	regulator-min-microvolt = <2900000>;
+	regulator-min-microvolt = <3000000>;
 	regulator-max-microvolt = <3000000>;
 };
 /*display team xiexiaobo end*/

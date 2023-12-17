@@ -125,7 +125,7 @@
 		S6A: pm8150_s6: regulator-pm8150-s6 {
 			regulator-name = "pm8150_s6";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
-			regulator-min-microvolt = <500000>;
+			regulator-min-microvolt = <600000>;
 			regulator-max-microvolt = <1128000>;
 			qcom,init-voltage = <600000>;
 		};
@@ -551,7 +551,7 @@
 		S7C: pm8150a_s7: regulator-pm8150a-s7 {
 			regulator-name = "pm8150a_s7";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
-			regulator-min-microvolt = <318000>;
+			regulator-min-microvolt = <348000>;
 			regulator-max-microvolt = <1000000>;
 			qcom,init-voltage = <348000>;
 		};
@@ -814,7 +814,7 @@
 		S2F: pm8009_s2: regulator-pm8009-s2 {
 			regulator-name = "pm8009_s2";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
-			regulator-min-microvolt = <462000>;
+			regulator-min-microvolt = <512000>;
 			regulator-max-microvolt = <1100000>;
 			qcom,init-voltage = <512000>;
 		};
