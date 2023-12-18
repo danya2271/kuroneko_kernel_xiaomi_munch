@@ -2363,15 +2363,7 @@ long _do_fork(unsigned long clone_flags,
 
 	/* Boost DDR bus to the max for 50 ms when userspace launches an app */
 	if (is_zygote_pid(current->pid)) {
-	  /*
-	   * Dont boost CPU & DDR if battery saver profile is enabled
-	   * and boost CPU & DDR for 25ms if balanced profile is enabled
-	   */
-	  if (kp_active_mode() == 3 || kp_active_mode() == 0) {
-	    devfreq_boost_kick_max(DEVFREQ_MSM_CPUBW, 100);
-	  } else if (kp_active_mode() == 2) {
-	    devfreq_boost_kick_max(DEVFREQ_MSM_CPUBW, 50);
-	  }
+	    devfreq_boost_kick_max(DEVFREQ_MSM_CPUBW, 35);
 	}
 
 	/*
