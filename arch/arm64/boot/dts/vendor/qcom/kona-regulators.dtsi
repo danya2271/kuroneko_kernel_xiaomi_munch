@@ -113,9 +113,9 @@
 		S5A: pm8150_s5: regulator-pm8150-s5 {
 			regulator-name = "pm8150_s5";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
-			regulator-min-microvolt = <1724000>;
+			regulator-min-microvolt = <1524000>;
 			regulator-max-microvolt = <2040000>;
-			qcom,init-voltage = <1724000>;
+			qcom,init-voltage = <1524000>;
 		};
 	};
 
@@ -125,9 +125,9 @@
 		S6A: pm8150_s6: regulator-pm8150-s6 {
 			regulator-name = "pm8150_s6";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
-			regulator-min-microvolt = <600000>;
+			regulator-min-microvolt = <450000>;
 			regulator-max-microvolt = <1128000>;
-			qcom,init-voltage = <600000>;
+			qcom,init-voltage = <450000>;
 		};
 	};
 
@@ -195,9 +195,9 @@
 		L5A: pm8150_l5: regulator-pm8150-l5 {
 			regulator-name = "pm8150_l5";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
-			regulator-min-microvolt = <880000>;
+			regulator-min-microvolt = <670000>;
 			regulator-max-microvolt = <880000>;
-			qcom,init-voltage = <880000>;
+			qcom,init-voltage = <670000>;
 			qcom,init-mode = <RPMH_REGULATOR_MODE_HPM>;
 			qcom,proxy-consumer-enable;
 			qcom,proxy-consumer-current = <100000>;
@@ -234,9 +234,9 @@
 		L6A: pm8150_l6: regulator-pm8150-l6 {
 			regulator-name = "pm8150_l6";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
-			regulator-min-microvolt = <1200000>;
+			regulator-min-microvolt = <1100000>;
 			regulator-max-microvolt = <1200000>;
-			qcom,init-voltage = <1200000>;
+			qcom,init-voltage = <1100000>;
 			qcom,init-mode = <RPMH_REGULATOR_MODE_LPM>;
 		};
 	};
