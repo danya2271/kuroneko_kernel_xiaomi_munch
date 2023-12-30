@@ -465,9 +465,9 @@ KBUILD_LDFLAGS  += -mllvm -march=armv8.2-a+crypto+crc -mcpu=cortex-a55 -mtune=co
 endif
 
 ifeq ($(cc-name),clang)
-KBUILD_CFLAGS	+= -mllvm -inline-threshold=1
-KBUILD_CFLAGS	+= -mllvm -inlinehint-threshold=1
-KBUILD_CFLAGS   += -mllvm -unroll-threshold=1
+KBUILD_CFLAGS	+= -mllvm -inline-threshold=1000
+KBUILD_CFLAGS	+= -mllvm -inlinehint-threshold=1500
+KBUILD_CFLAGS   += -mllvm -unroll-threshold=600
 else ifeq ($(cc-name),gcc)
 KBUILD_CFLAGS	+= --param max-inline-insns-single=1
 KBUILD_CFLAGS	+= --param max-inline-insns-auto=1
