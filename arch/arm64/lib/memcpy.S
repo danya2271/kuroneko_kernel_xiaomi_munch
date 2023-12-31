@@ -164,7 +164,6 @@ L(copy_long):
 	ldp	B_l, B_h, [src, 32]
 	ldp	C_l, C_h, [src, 48]
 	ldp	D_l, D_h, [src, 64]!
-	prfm    pldl1strm, [src, #(4*L1_CACHE_BYTES)]
 	subs	count, count, 128 + 16	/* Test and readjust count.  */
 	b.ls	L(copy64_from_end)
 
@@ -177,7 +176,6 @@ L(loop64):
 	ldp	C_l, C_h, [src, 48]
 	stp	D_l, D_h, [dst, 64]!
 	ldp	D_l, D_h, [src, 64]!
-	prfm    pldl1strm, [src, #(4*L1_CACHE_BYTES)]
 	subs	count, count, 64
 	b.hi	L(loop64)
 
@@ -211,7 +209,6 @@ L(copy_long_backwards):
 	ldp	B_l, B_h, [srcend, -32]
 	ldp	C_l, C_h, [srcend, -48]
 	ldp	D_l, D_h, [srcend, -64]!
-	prfm    pldl1strm, [src, #(4*L1_CACHE_BYTES)]
 	sub	dstend, dstend, tmp1
 	subs	count, count, 128
 	b.ls	L(copy64_from_start)
@@ -225,7 +222,6 @@ L(loop64_backwards):
 	ldp	C_l, C_h, [srcend, -48]
 	stp	D_l, D_h, [dstend, -64]!
 	ldp	D_l, D_h, [srcend, -64]!
-	prfm    pldl1strm, [src, #(4*L1_CACHE_BYTES)]
 	subs	count, count, 64
 	b.hi	L(loop64_backwards)
 

@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: GPL-2.0
-KBUILD_CFLAGS	+= -mllvm -inline-threshold=1600 -fno-strict-aliasing -funit-at-a-time
-KBUILD_CFLAGS	+= -mllvm -inlinehint-threshold=1750
-KBUILD_CFLAGS   += -mllvm -unroll-threshold=20
+KBUILD_CFLAGS	+= -mllvm -inline-threshold=15000 -fno-strict-aliasing -funit-at-a-time
+KBUILD_CFLAGS	+= -mllvm -inlinehint-threshold=10000
+KBUILD_CFLAGS   += -mllvm -unroll-threshold=1800
 lib-y		:= clear_user.o delay.o copy_from_user.o		\
 		   copy_to_user.o copy_in_user.o copy_page.o		\
 		   clear_page.o csum.o memchr.o memcpy.o		\
