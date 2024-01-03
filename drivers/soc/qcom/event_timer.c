@@ -57,6 +57,10 @@ static enum hrtimer_restart event_hrtimer_cb(struct hrtimer *hrtimer);
 static void irq_affinity_change_notifier(struct irq_affinity_notify *notify,
 						const cpumask_t *new_cpu_mask);
 static void irq_affinity_release(struct kref *ref);
+
+static int msm_event_debug_mask;
+module_param_named(debug_mask, msm_event_debug_mask, int, 0664);
+
 enum {
 	MSM_EVENT_TIMER_DEBUG = 1U << 0,
 };
@@ -197,6 +201,10 @@ static enum hrtimer_restart event_hrtimer_cb(struct hrtimer *hrtimer)
 
 		WARN_ON_ONCE(event->cpu != cpu);
 
+		if (msm_event_debug_mask && MSM_EVENT_TIMER_DEBUG)
+			pr_debug("Deleting event %pK @ %lu(on cpu%d)\n", event,
+				(unsigned long)ktime_to_ns(next->expires), cpu);
+
 		timerqueue_del(&per_cpu(timer_head, cpu), &event->node);
 
 		if (event->function)
@@ -232,8 +240,17 @@ static void create_timer_smp(void *data)
 	next = timerqueue_getnext(&per_cpu(timer_head, event->cpu));
 	timerqueue_add(&per_cpu(timer_head, event->cpu), &event->node);
 
+	if (msm_event_debug_mask && MSM_EVENT_TIMER_DEBUG)
+		pr_debug("Adding Event %pK(on cpu%d) for %lu\n", event,
+		event->cpu,
+		(unsigned long)ktime_to_ns(event->node.expires));
+
 	if (!next || (next && (ktime_to_ns(event->node.expires) <
 						ktime_to_ns(next->expires)))) {
+		if (msm_event_debug_mask && MSM_EVENT_TIMER_DEBUG)
+			pr_debug("Setting timer for %lu(on cpu%d)\n",
+			(unsigned long)ktime_to_ns(event->node.expires),
+			event->cpu);
 
 		create_hrtimer(event);
 	}
@@ -285,6 +302,10 @@ static void irq_affinity_change_notifier(struct irq_affinity_notify *notify,
 
 	old_cpu = event->cpu;
 
+	if (msm_event_debug_mask && MSM_EVENT_TIMER_DEBUG)
+		pr_debug("irq %d, event %pK, old_cpu(%d)->new_cpu(%d)\n",
+						irq, event, old_cpu, new_cpu);
+
 	/* No change in IRQ affinity */
 	if (old_cpu == new_cpu)
 		return;
@@ -302,6 +323,9 @@ static void irq_affinity_change_notifier(struct irq_affinity_notify *notify,
 						old_cpu)) < 0))) {
 		event->cpu = new_cpu;
 		spin_unlock_irqrestore(&event_timer_lock, flags);
+		if (msm_event_debug_mask && MSM_EVENT_TIMER_DEBUG)
+			pr_debug("Event:%pK is not active or in callback\n",
+					event);
 		return;
 	}
 
@@ -316,6 +340,9 @@ static void irq_affinity_change_notifier(struct irq_affinity_notify *notify,
 	 * Delete the event from the timer queue anyway
 	 */
 	timerqueue_del(&per_cpu(timer_head, old_cpu), &event->node);
+
+	if (msm_event_debug_mask && MSM_EVENT_TIMER_DEBUG)
+		pr_debug("Event:%pK is in the list\n", event);
 
 	spin_unlock_irqrestore(&event_timer_lock, flags);
 
@@ -377,6 +404,11 @@ void activate_event_timer(struct event_timer_info *event, ktime_t event_time)
 	if (!event)
 		return;
 
+	if (msm_event_debug_mask && MSM_EVENT_TIMER_DEBUG)
+		pr_debug("Adding event %pK timer @ %lu(on cpu%d)\n", event,
+				(unsigned long)ktime_to_us(event_time),
+				event->cpu);
+
 	spin_lock(&event_setup_lock);
 	event->node.expires = event_time;
 	/* Start hrtimer and add event to rb tree */
@@ -393,6 +425,9 @@ EXPORT_SYMBOL(activate_event_timer);
 void deactivate_event_timer(struct event_timer_info *event)
 {
 	unsigned long flags;
+
+	if (msm_event_debug_mask && MSM_EVENT_TIMER_DEBUG)
+		pr_debug("Deactivate timer\n");
 
 	spin_lock_irqsave(&event_timer_lock, flags);
 	if (is_event_active(event)) {
@@ -448,6 +483,10 @@ ktime_t get_next_event_time(int cpu)
 
 	next_event = hrtimer_get_remaining(
 				&per_cpu(per_cpu_hrtimer.event_hrtimer, cpu));
+
+	if (msm_event_debug_mask && MSM_EVENT_TIMER_DEBUG)
+		pr_debug("Next Event %lu(on cpu%d)\n",
+			(unsigned long)ktime_to_us(next_event), cpu);
 
 	return next_event;
 }
