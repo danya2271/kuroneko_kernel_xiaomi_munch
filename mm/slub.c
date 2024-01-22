@@ -1303,7 +1303,7 @@ static int __init setup_slub_debug(char *str)
 			 * Avoid enabling debugging on caches if its minimum
 			 * order would increase as a result.
 			 */
-			disable_higher_order_debug = 1;
+			disable_higher_order_debug = 0;
 			break;
 		default:
 			pr_err("slub_debug option '%c' unknown. skipped\n",
